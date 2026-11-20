@@ -2,53 +2,55 @@
   "title": "Meine Widgets",
   "children": [
     {
-      "id": "w-arbeit",
+      "id": "w-d319aa10f3",
       "type": "widget",
-      "title": "Arbeit",
-      "icon": "💼",
-      "description": "Tools und Dokumentation",
+      "title": "Test1",
+      "icon": "📁",
+      "description": "",
       "children": [
         {
-          "id": "w-dev",
+          "id": "w-2cfff3fbf2",
           "type": "widget",
-          "title": "Entwicklung",
-          "icon": "🛠️",
+          "title": "Test11",
+          "icon": "📁",
           "description": "",
           "children": [
-            { "id": "l-github", "type": "link", "title": "GitHub", "url": "https://github.com", "icon": "", "description": "" },
-            { "id": "l-mdn", "type": "link", "title": "MDN Web Docs", "url": "https://developer.mozilla.org", "icon": "📘", "description": "Web-Referenz" }
+            {
+              "id": "l-4169c8b0b4",
+              "type": "link",
+              "title": "Neuer Link",
+              "url": "https://youtube.com/",
+              "icon": "",
+              "description": ""
+            },
+            {
+              "id": "l-6e2d358651",
+              "type": "link",
+              "title": "Neuer Link",
+              "url": "https://facebook.com/",
+              "icon": "",
+              "description": ""
+            }
           ]
         },
-        { "id": "l-calendar", "type": "link", "title": "Kalender", "url": "https://calendar.google.com", "icon": "📅", "description": "" }
-      ]
-    },
-    {
-      "id": "w-privat",
-      "type": "widget",
-      "title": "Privat",
-      "icon": "🏠",
-      "description": "Alltag, News und Freizeit",
-      "children": [
         {
-          "id": "w-news",
+          "id": "w-ee5aa47262",
           "type": "widget",
-          "title": "Nachrichten",
-          "icon": "📰",
+          "title": "Test12",
+          "icon": "📁",
           "description": "",
           "children": [
-            { "id": "l-tagesschau", "type": "link", "title": "Tagesschau", "url": "https://www.tagesschau.de", "icon": "", "description": "" }
+            {
+              "id": "l-3fa4c8f885",
+              "type": "link",
+              "title": "Neuer Link",
+              "url": "https://instagram.com/",
+              "icon": "",
+              "description": ""
+            }
           ]
-        },
-        { "id": "l-wiki", "type": "link", "title": "Wikipedia", "url": "https://de.wikipedia.org", "icon": "📚", "description": "" }
+        }
       ]
-    },
-    {
-      "id": "w-lernen",
-      "type": "widget",
-      "title": "Lernen",
-      "icon": "🎓",
-      "description": "Kurse und Nachschlagewerke",
-      "children": []
     }
   ]
 }
