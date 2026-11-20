@@ -3,7 +3,6 @@ import { h, iconEl, countLabel, safeUrl, hostOf, normalize } from './common.js';
 const main = document.getElementById('main');
 const searchInput = document.getElementById('search');
 const brand = document.getElementById('brand');
-const editLink = document.getElementById('edit-link');
 
 let data = null;
 
@@ -53,7 +52,6 @@ function render() {
   const { node, trail } = resolve(currentPath());
   const ids = trail.map(n => n.id);
   document.title = trail.length ? `${node.title} · ${data.title}` : data.title;
-  editLink.href = 'admin.html' + (trail.length ? `#${encodeURIComponent(node.id)}` : '');
 
   const parts = [];
 
@@ -78,9 +76,7 @@ function render() {
   const links = kids.filter(c => c.type === 'link');
 
   if (!kids.length) {
-    parts.push(h('div', { class: 'empty' },
-      'Hier ist noch nichts. ',
-      h('a', { href: editLink.href }, 'Im Editor Widgets oder Links hinzufügen'), '.'));
+    parts.push(h('div', { class: 'empty' }, 'Hier ist noch nichts.'));
   }
 
   if (widgets.length) {
