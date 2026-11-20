@@ -1,4 +1,30 @@
 {
   "title": "Startseite",
-  "children": []
+  "children": [
+    {
+      "id": "w-ac70c9461f",
+      "type": "widget",
+      "title": "Französisch",
+      "icon": "📁",
+      "description": "",
+      "children": [
+        {
+          "id": "l-9bb6536fc5",
+          "type": "link",
+          "title": "YouTube",
+          "url": "https://youtube.com/",
+          "icon": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "id": "w-7f09fedbf1",
+      "type": "widget",
+      "title": "Latein",
+      "icon": "📁",
+      "description": "",
+      "children": []
+    }
+  ]
 }
