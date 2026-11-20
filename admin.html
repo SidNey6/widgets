@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Widgets bearbeiten</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✏️</text></svg>">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="index.html">← Zur Startseite</a>
+      <span class="status" id="status"><span class="dot"></span><span id="status-text">Lädt…</span></span>
+      <button class="btn" id="btn-settings" type="button">⚙️ GitHub</button>
+      <button class="btn" id="btn-reload" type="button" title="Daten neu laden">⟳ Neu laden</button>
+      <button class="btn primary" id="btn-save" type="button">💾 Speichern</button>
+    </div>
+  </header>
+
+  <main class="wrap admin-layout">
+    <section class="panel" aria-label="Struktur">
+      <div class="panel-head">
+        <span>Struktur</span>
+        <span style="display:flex;gap:6px">
+          <button class="btn small" id="btn-expand" type="button" title="Alle aufklappen">⊞</button>
+          <button class="btn small" id="btn-collapse" type="button" title="Alle zuklappen">⊟</button>
+        </span>
+      </div>
+      <ul class="tree" id="tree" role="tree"></ul>
+    </section>
+
+    <section class="panel" aria-label="Bearbeiten">
+      <div class="panel-head" id="editor-head">Bearbeiten</div>
+      <div class="panel-body" id="editor"></div>
+    </section>
+  </main>
+
+  <footer>
+    <button class="btn small" id="btn-export" type="button">⬇️ JSON exportieren</button>
+    <label class="btn small" style="cursor:pointer">⬆️ JSON importieren
+      <input type="file" id="file-import" accept="application/json,.json" hidden>
+    </label>
+  </footer>
+
+  <dialog id="settings">
+    <form method="dialog" id="settings-form">
+      <div class="panel-head">GitHub-Verbindung</div>
+      <div class="panel-body">
+        <div class="note">
+          Zum Speichern wird die Datei <code>data.json</code> direkt im Repository aktualisiert.
+          Dafür brauchst du einen <strong>Fine-grained Personal Access Token</strong>:
+          <ol>
+            <li><a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">Neuen Token erstellen</a></li>
+            <li>„Repository access“ → <em>Only select repositories</em> → dieses Repo</li>
+            <li>„Permissions“ → <em>Contents</em> → <strong>Read and write</strong></li>
+          </ol>
+          Der Token wird nur in diesem Browser gespeichert (localStorage) und nur an api.github.com gesendet.
+        </div>
+        <div class="field-row" style="grid-template-columns:1fr 1fr">
+          <div class="field"><label for="s-owner">Besitzer</label><input id="s-owner" required autocomplete="off"></div>
+          <div class="field"><label for="s-repo">Repository</label><input id="s-repo" required autocomplete="off"></div>
+        </div>
+        <div class="field-row" style="grid-template-columns:1fr 1fr">
+          <div class="field"><label for="s-branch">Branch</label><input id="s-branch" required autocomplete="off"></div>
+          <div class="field"><label for="s-path">Datei</label><input id="s-path" required autocomplete="off"></div>
+        </div>
+        <div class="field">
+          <label for="s-token">Token</label>
+          <input id="s-token" type="password" autocomplete="off" placeholder="github_pat_…">
+          <span class="hint">Leer lassen, um nur lokal zu bearbeiten und als JSON zu exportieren.</span>
+        </div>
+      </div>
+      <div class="foot">
+        <button class="btn danger" value="forget" type="submit" id="s-forget">Token vergessen</button>
+        <span style="flex:1"></span>
+        <button class="btn" value="cancel" type="submit" formnovalidate>Abbrechen</button>
+        <button class="btn primary" value="save" type="submit">Übernehmen</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="assets/admin.js"></script>
+</body>
+</html>
